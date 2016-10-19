@@ -36,6 +36,7 @@
 		60B604AB1DB7F62F0094061F /* MarketplaceFinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketplaceFinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B604AF1DB7F62F0094061F /* MarketplaceFinalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceFinalTests.swift; sourceTree = "<group>"; };
 		60B604B11DB7F62F0094061F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60B604BA1DB7FF1F0094061F /* MarketplaceFinal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarketplaceFinal.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		60B604991DB7F62F0094061F /* MarketplaceFinal */ = {
 			isa = PBXGroup;
 			children = (
+				60B604BA1DB7FF1F0094061F /* MarketplaceFinal.entitlements */,
 				60B6049A1DB7F62F0094061F /* AppDelegate.swift */,
 				60B6049C1DB7F62F0094061F /* ViewController.swift */,
 				60B6049E1DB7F62F0094061F /* Main.storyboard */,
@@ -148,6 +150,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2W3P634BS8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					60B604AA1DB7F62F0094061F = {
 						CreatedOnToolsVersion = 8.0;
@@ -339,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarketplaceFinal/MarketplaceFinal.entitlements;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = MarketplaceFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -352,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MarketplaceFinal/MarketplaceFinal.entitlements;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = MarketplaceFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

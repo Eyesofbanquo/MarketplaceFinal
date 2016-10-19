@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        ///
+        self.registerPushNotification(application)
         return true
+    }
+    
+    func registerPushNotification(_ application:UIApplication){
+        DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound], completionHandler: {
+                [weak application] (granted, error) in
+                if granted {
+                    application?.registerForRemoteNotifications()
+                }
+            })
+            
+        }
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print(String(describing: deviceToken))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
